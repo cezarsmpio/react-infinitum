@@ -1,27 +1,35 @@
 import React from 'react';
 
+var reachBottom = false;
+
 class Infinitum extends React.Component {
 
   componentDidMount() {
-    let w = window;
-    let d = document;
-
-    w.addEventListener('scroll', () => {
-      let wintop = w.scrollY;
-      let docheight = this._getDocHeight();
-      let winheight = w.innerHeight;
-      let scrolltrigger = this.props.trigger;
-
-      if ((wintop/(docheight-winheight)) > scrolltrigger) {
-        if (this.props.loadMore) {
-          this.props.onReachBottom();
-        }
-      }
-    });
+    window.addEventListener('scroll', this._checkWindowReachBottom);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll');
+    window.removeEventListener('scroll', this._checkWindowReachBottom);
+  }
+
+  _checkWindowReachBottom() {
+    let w = window;
+
+    let wintop = w.scrollY;
+    let docheight = this._getDocHeight();
+    let winheight = w.innerHeight;
+    let scrolltrigger = this.props.trigger;
+
+    if ((wintop/(docheight-winheight)) > scrolltrigger) {
+      if (this.props.loadMore && !reachBottom) {
+        reachBottom = true;
+
+        this.props.onReachBottom();
+      }
+    }
+    else {
+      reachBottom = false;
+    }
   }
 
   _getDocHeight() {

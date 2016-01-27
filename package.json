@@ -1,6 +1,6 @@
 {
   "name": "react-infinitum",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "React Infinitum is a window infinite scroll loader",
   "main": "lib/react-infinitum.js",
   "scripts": {
