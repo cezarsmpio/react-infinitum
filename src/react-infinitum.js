@@ -4,6 +4,13 @@ var reachBottom = false;
 
 class Infinitum extends React.Component {
 
+  constructor(props) {
+    super(props);
+
+    this._checkWindowReachBottom = this._checkWindowReachBottom.bind(this);
+    this._getDocHeight = this._getDocHeight.bind(this);
+  }
+
   componentDidMount() {
     window.addEventListener('scroll', this._checkWindowReachBottom);
   }
