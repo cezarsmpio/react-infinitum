@@ -1,0 +1,40 @@
+{
+  "name": "react-infinitum",
+  "version": "0.1.0",
+  "description": "React Infinitum is a window infinite scroll loader",
+  "main": "lib/react-infinitum.js",
+  "scripts": {
+    "test": "npm test",
+    "compile": "babel --presets es2015 src/ -d lib/",
+    "prepublish": "npm run compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/CezarLuiz0/react-infinitum.git"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "web",
+    "scroll",
+    "infinite",
+    "infinite",
+    "scroll",
+    "loader",
+    "javascript",
+    "js"
+  ],
+  "author": "Cezar Luiz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CezarLuiz0/react-infinitum/issues"
+  },
+  "homepage": "https://github.com/CezarLuiz0/react-infinitum#readme",
+  "devDependencies": {
+    "babel-cli": "^6.4.5",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6"
+  }
+}
